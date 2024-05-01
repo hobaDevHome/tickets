@@ -20,8 +20,7 @@ const getTicketById = async (id) => {
 
 let updateTicketData = {};
 const TicketPage = async ({ params }) => {
-  // const EDITMODE = params.id === "new" ? false : true;
-  const EDITMODE = false;
+  const EDITMODE = params.id === "new" ? false : true;
 
   if (EDITMODE) {
     updateTicketData = await getTicketById(params.id);

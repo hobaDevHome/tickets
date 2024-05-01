@@ -3,8 +3,8 @@ import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 const EditTicketForm = ({ ticket }) => {
-  //   const EDITMODE = ticket._id === "new" ? false : true;
-  const EDITMODE = false;
+  const EDITMODE = ticket._id === "new" ? false : true;
+
   const router = useRouter();
 
   const startingTicketData = {
@@ -53,8 +53,8 @@ const EditTicketForm = ({ ticket }) => {
       }
     } else {
       const res = await fetch("/api/Tickets", {
-        method: "POST",
-        body: JSON.stringify({ formData }),
+        "method": "POST",
+        "body": JSON.stringify({ formData }),
         "Content-Type": "application/json",
       });
       if (!res.ok) {

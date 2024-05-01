@@ -10,7 +10,6 @@ const getTickets = async () => {
     if (!res.ok) {
       throw new Error("Failed to fetch topics");
     }
-
     return res.json();
   } catch (error) {
     console.log("Error loading topics: ", error);
@@ -21,7 +20,7 @@ const Dashboard = async () => {
   const data = await getTickets();
 
   if (!data?.tickets) {
-    return <p>No tickets.</p>;
+    return <p>No tickets...</p>;
   }
   const tickets = data.tickets;
 
